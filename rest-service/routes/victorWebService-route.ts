@@ -17,6 +17,7 @@ export class VictorWebServiceRoute extends BaseRoute {
 
     protected initRoutes() {
 
+        this.router.use(bodyParser.text());
         this.router.use(bodyParser.json());
         this.router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
             extended: true

@@ -1,55 +1,58 @@
-export type Criteria = {
+export class Criteria { 
 
-    //
-    // ObjectTypeFullName
-    typeFullName: string;
+    constructor(
 
-    //
-    // whereClause(Example: "Name = ?")
-    whereClause: string;
+        //
+        // ObjectTypeFullName
+        public typeFullName: string = '',
 
-    //
-    // Argument Types
-    argTypes: string[];
+        //
+        // whereClause(Example: "Name = ?")
+        public whereClause: string = '',
 
-    //
-    // Arguments for the where clause
-    arguments: object[];
+        //
+        // Argument Types
+        public argTypes: string[] = [],
 
-    //
-    // Only the properties that wants to be displayed or returned back
-    displayProperties: string[];
+        //
+        // Arguments for the where clause
+        public Arguments: object[] = [],
 
-    //
-    // Size of the page. Indicates the number of records to be returned
-    loadCollection: number;
+        //
+        // Only the properties that wants to be displayed or returned back
+        public displayProperties: string[] = [],
 
-    //
-    // Number of the page to be returned.
-    pageSize: number;
+        //
+        // Size of the page. Indicates the number of records to be returned
+        public loadCollection: number | undefined = undefined,
 
-    //
-    // True to just get count of the records that match the criteria.
-    countOnly: boolean;
+        //
+        // Number of the page to be returned.
+        public pageSize: number | undefined = undefined,
 
-    //
-    // Sort direction
-    // Comma seperated string that accepts multiple sort values. Ex: FirstName DESC, ObjectID ASC etc
-    sountOnly: string;
+        //
+        // True to just get count of the records that match the criteria.
+        public countOnly: boolean | undefined = undefined,
 
-    //
-    // Type Full name
-    inStatementType: string;
+        //
+        // Sort direction
+        // Comma seperated string that accepts multiple sort values. Ex: FirstName DESC, ObjectID ASC etc
+        public sountOnly: string = '',
 
-    //
-    // AND/OR/AND_NOT/OR_NOT/NONE
-    inStatementOperator: string;
+        //
+        // Type Full name
+        public inStatementType: string = '',
 
-    //
-    // Property Name
-    inStatementPropertyName: string;
+        //
+        // AND/OR/AND_NOT/OR_NOT/NONE
+        public inStatementOperator: string = '',
 
-    //
-    // Values for the In statement property
-    inStatementValues: object[];
+        //
+        // Property Name
+        public inStatementPropertyName: string = '',
+
+        //
+        // Values for the In statement property
+        public inStatementValues: object[] = []
+    ) {}
 }

@@ -4,6 +4,7 @@ import { AuthRoute } from './auth-route';
 import { BaseRoute } from './base-route';
 import { GenericRoute } from './generic-route';
 import { ObjectsRoute } from './objects-route';
+import { SchemaRoute } from './schema-route';
 import { V2Route } from './v2-route';
 
 export class ApiRoute extends BaseRoute {
@@ -16,10 +17,10 @@ export class ApiRoute extends BaseRoute {
 
     protected initRoutes() {
 
-        this.router.use(bodyParser.json());
-        this.router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-            extended: true
-        })); 
+        // this.router.use(bodyParser.json());
+        // this.router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+        //     extended: true
+        // })); 
 
         ApiRoute.setApiRoutes(this);
         this.AddRoute(V2Route.instance);
@@ -49,5 +50,6 @@ export class ApiRoute extends BaseRoute {
         router.AddRoute(AuthRoute.instance);
         router.AddRoute(ObjectsRoute.instance);
         router.AddRoute(GenericRoute.instance);
+        router.AddRoute(SchemaRoute.instance);
     }
 }

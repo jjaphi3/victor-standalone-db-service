@@ -3,9 +3,9 @@ import { Criteria } from '../models/criteria';
 import { Utils } from '../utils';
 import { BaseRoute } from './base-route';
 
-export class ObjectsRoute extends BaseRoute {
+export class JournalRoute extends BaseRoute {
 
-    protected static objectsRoute: ObjectsRoute | undefined = undefined;
+    protected static journalRoute: JournalRoute | undefined = undefined;
 
     constructor() {
         super();
@@ -13,10 +13,7 @@ export class ObjectsRoute extends BaseRoute {
 
     protected initRoutes() {
 
-        // const videoApp = VideoAppRoute.Instance;
-        // this.AddRoute(videoApp.Path, videoApp.Router);
-
-        this.router.post('/FindObjsWithCriteriaFilter', (req, res, next) => {
+        this.router.get('/getReport', (req, res, next) => {
             console.log(`url:${req?.url}`);
 
             const criteria = Utils.setObjectFromRequestBody(req, new Criteria()) as Criteria;
@@ -32,14 +29,14 @@ export class ObjectsRoute extends BaseRoute {
     //
     // path for this route
     public get path(): string {
-        return '/objects';
+        return '/journal';
     }
 
     //
-    // ApiRoute instance
-    public static get instance(): ObjectsRoute {
-        return ObjectsRoute.objectsRoute 
-            ? ObjectsRoute.objectsRoute
-            : ObjectsRoute.objectsRoute = new ObjectsRoute();
+    // JournalRoute instance
+    public static get instance(): JournalRoute {
+        return JournalRoute.journalRoute 
+            ? JournalRoute.journalRoute
+            : JournalRoute.journalRoute = new JournalRoute();
     }
 }

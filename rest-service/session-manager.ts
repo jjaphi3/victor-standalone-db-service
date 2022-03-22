@@ -1,3 +1,5 @@
+import express from 'express';
+
 import { Login, Session } from './models/login';
 
 export class SessionManager {
@@ -30,9 +32,25 @@ export class SessionManager {
             : SessionManager.sessionManager = new SessionManager();
     }
 
+//
+    // get from request
+    public getSessionFromRequest(req: express.Request): Session | undefined {
+        const sessionId = req?.get('session-id');
+        if (sessionId) {
+            return this.getSessionFromId(sessionId);
+        }
+        return undefined;
+    }
+
+    //
+    // get from id
+    public getSessionFromId(sessionId: string | undefined): Session | undefined {
+        return this.sessions.find(s => s.sessionId === sessionId);
+    }
+
     //
     // get / create a session
-    public getSession(login: Login): Session {
+    public getSessionFromLogin(login: Login): Session {
         let session = this.sessions.find(s => this.compareLogins(s.login, login));
         if (session != null) {
             return session;

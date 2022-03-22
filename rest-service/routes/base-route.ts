@@ -1,6 +1,8 @@
 import express from 'express';
 
 import { HttpResponse } from '../models/http-response';
+import { Session } from '../models/login';
+import { SessionManager } from '../session-manager';
 
 export abstract class BaseRoute {
 
@@ -16,7 +18,13 @@ export abstract class BaseRoute {
 
     //
     // send the response
-    protected sendResponse(res: express.Response, response: HttpResponse) {
+    protected sendResponse(req: express.Request, res: express.Response, response: HttpResponse) {
+        
+        const session = SessionManager.instance.getSessionFromRequest(req);
+        if (session) {
+            res.set('session-id', session.sessionId);
+        }
+        
         res.status(response.status).json(response.body);
     }
 
