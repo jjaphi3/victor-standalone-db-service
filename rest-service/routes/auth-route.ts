@@ -1,8 +1,10 @@
 import bodyParser from 'body-parser';
+import { StatusCodes } from 'http-status-codes';
 
 import { AuthController } from '../controllers/auth-controller';
 import { Login } from '../models/login';
 import { SessionManager } from '../session-manager';
+import { Utils } from '../utils';
 import { BaseRoute } from './base-route';
 
 export class AuthRoute extends BaseRoute {
@@ -19,22 +21,38 @@ export class AuthRoute extends BaseRoute {
         // this.AddRoute(videoApp.Path, videoApp.Router);
 
 
-        this.router.use(bodyParser.json());
-        this.router.use(bodyParser.text());
-        this.router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-            extended: true
-          })); 
+        // this.router.use(bodyParser.json());
+        // this.router.use(bodyParser.text());
+        // this.router.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+        //     extended: true
+        //   })); 
 
         this.router.post('/login', (req, res, next) => {
             console.log(`url:${req?.url}`);
-            // const login = req.body as Login;
-            // console.log(login);
 
-            const loginParams = new URLSearchParams(req.body);
-            const login = Object.fromEntries(loginParams) as Login;
-            this.sendResponse(res, AuthController.instance.Login(login));
+            const login = Utils.setObjectFromRequestBody(req, new Login()) as Login; 
+            const response = AuthController.instance.Login(login);
 
-            // res.json({'response': 123});
+            if (response.status == StatusCodes.OK) {
+                const session = SessionManager.instance.getSessionFromLogin(login);
+                if (session) {
+                    res.set('session-id', session.sessionId);
+                }
+            }
+
+            res.status(response.status).json(response.body);
+        });
+
+        this.router.post('/logout', (req, res, next) => {
+            console.log(`url:${req?.url}`);
+            
+            const sessionId = req?.get('session-id');
+            const response = AuthController.instance.Logout(sessionId);
+            if (sessionId) {
+                res.set('session-id', sessionId);
+            }
+
+            res.status(response.status).json(response.body);
         });
 
         this.router.all('/*', (req, res, next) => {

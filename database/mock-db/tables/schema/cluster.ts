@@ -1,0 +1,466 @@
+const typeName = 'SoftwareHouse.NextGen.Common.SecurityObjects.Cluster';
+const schema = {
+    'FullClassName': 'SoftwareHouse.NextGen.Common.SecurityObjects.Cluster',
+    'LocalizedName': 'iSTAR Cluster',
+    'IsUserSelectable': true,
+    'LocalityType': 'LocalOnly',
+    'Description': 'This class is used to specify a cluster of iSTAR controllers in the system.',
+    'IsGroupable': true,
+    'PropertyList': [
+        {
+            'Name': 'Name',
+            'LocalizedName': 'Name',
+            'IsUserSelectable': true,
+            'IsReadOnly': false,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'String',
+            'IsEnum': false,
+            'MaxSize': 100,
+            'Description': 'The name of this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'Description',
+            'LocalizedName': 'Description',
+            'IsUserSelectable': true,
+            'IsReadOnly': false,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'String',
+            'IsEnum': false,
+            'MaxSize': 500,
+            'Description': 'The description of this iSTAR cluster',
+            'IsUdf': false
+        },
+        {
+            'Name': 'GUID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Guid',
+            'IsEnum': false,
+            'Description': 'The GUID of this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'APBFailureMode',
+            'LocalizedName': 'APB Failure mode',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'SoftwareHouse.NextGen.Common.SecurityObjectDefinitions.APBFailureModes',
+            'IsEnum': true,
+            'Description': 'APB failure mode',
+            'IsUdf': false
+        },
+        {
+            'Name': 'ClassType',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': true,
+            'Type': 'Type',
+            'IsEnum': false,
+            'IsUdf': false
+        },
+        {
+            'Name': 'ControllerType',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'SoftwareHouse.NextGen.Common.SecurityObjectDefinitions.ControllerTypes',
+            'IsEnum': true,
+            'Description': 'The type of the controller.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'Enabled',
+            'LocalizedName': 'Enabled',
+            'IsUserSelectable': true,
+            'IsReadOnly': false,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Check whether this iSTAR cluster is enabled or not.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'EncryptionSetting',
+            'LocalizedName': 'Encryption Setting',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'SoftwareHouse.NextGen.Common.SecurityObjectDefinitions.EncryptionSettingValue',
+            'IsEnum': true,
+            'Description': 'The Encryption Setting for controllers in this cluster',
+            'IsUdf': false
+        },
+        {
+            'Name': 'EnforceGlobalAntipassback',
+            'LocalizedName': 'Enforce Global Antipassback',
+            'IsUserSelectable': true,
+            'IsReadOnly': false,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Enforce Global Antipassback',
+            'IsUdf': false
+        },
+        {
+            'Name': 'FICAMEnabled',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Check whether this iSTAR cluster is enabled or not.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'FipsMode',
+            'LocalizedName': 'Fips Mode',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'SoftwareHouse.NextGen.Common.SecurityObjectDefinitions.EncryptionLevel',
+            'IsEnum': true,
+            'Description': 'The Fips Mode for encryption',
+            'IsUdf': false
+        },
+        {
+            'Name': 'FolderID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': -2147483648.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The folder ID of this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'GeographicLocation',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'String',
+            'IsEnum': false,
+            'MaxSize': -1,
+            'Description': 'Location',
+            'IsUdf': false
+        },
+        {
+            'Name': 'GISLocation',
+            'LocalizedName': 'GIS Location',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': false,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Location',
+            'LinkedProperties': [
+                'GeographicLocation'
+            ],
+            'IsUdf': false
+        },
+        {
+            'Name': 'HardwareFolderObjectKey',
+            'LocalizedName': 'Hardware Folder',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': false,
+            'Type': 'ObjectKey',
+            'IsEnum': false,
+            'Description': 'The name of the hardware folder that this controller is in.',
+            'LinkedProperties': [
+                'FolderID'
+            ],
+            'LookupData': {
+                'IsQueryable': true,
+                'PersistentTypeProperty': '',
+                'PersistentIdProperty': 'FolderID',
+                'TargetName': 'Name',
+                'TargetObjectID': 'ObjectID',
+                'ValidLookupTypes': [
+                    'SoftwareHouse.NextGen.Common.SecurityObjects.HardwareFolder'
+                ]
+            },
+            'IsUdf': false
+        },
+        {
+            'Name': 'IsDialup',
+            'LocalizedName': 'Is Dialup',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': '*** ClusterIsDialupToolTipText ***',
+            'IsUdf': false
+        },
+        {
+            'Name': 'LastModifiedByID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 1.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The ID of the operator who last modified this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'LastModifiedTime',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'DateTime',
+            'IsEnum': false,
+            'Description': 'The last modified date/time of this iSTAR cluster.',
+            'DateTimeKind': 'Local',
+            'DynamicViewColumnType': 'DateTime',
+            'IsUdf': false
+        },
+        {
+            'Name': 'LocationMetaTagFullName',
+            'LocalizedName': 'Location Tag Path',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': false,
+            'Type': 'String',
+            'IsEnum': false,
+            'Description': 'Represents the full path name of the objects location tag.',
+            'LinkedProperties': null,
+            'IsUdf': false
+        },
+        {
+            'Name': 'MaintenanceMode',
+            'LocalizedName': 'Maintenance Mode',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'The current Maintenance Mode value for this cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'ObjectID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': -2147483648.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The object ID of this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'ObjectKey',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': false,
+            'Type': 'ObjectKey',
+            'IsEnum': false,
+            'IsUdf': false
+        },
+        {
+            'Name': 'PartitionID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 1.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The partition ID of this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'PartitionKey',
+            'LocalizedName': 'Partition Name',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': false,
+            'Type': 'ObjectKey',
+            'IsEnum': false,
+            'Description': 'Partition of object',
+            'LinkedProperties': [
+                'PartitionID'
+            ],
+            'LookupData': {
+                'IsQueryable': true,
+                'PersistentTypeProperty': '',
+                'PersistentIdProperty': 'PartitionID',
+                'TargetName': 'Name',
+                'TargetObjectID': 'ObjectID',
+                'ValidLookupTypes': [
+                    'SoftwareHouse.CrossFire.Common.Objects.Partition'
+                ]
+            },
+            'IsUdf': false
+        },
+        {
+            'Name': 'PrimaryCommID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 1.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The primary comm method\'s object ID.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'PrimaryCommunicationStatus',
+            'LocalizedName': 'Primary Communication Status',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'SoftwareHouse.NextGen.Common.SecurityObjectDefinitions.OnlineStatus',
+            'IsEnum': true,
+            'Description': 'Primary communication status of this iSTAR cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'PrimaryControllerID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 1.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The primary controller\'s object ID.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'PrimaryControllerKey',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': false,
+            'IsPersistent': false,
+            'Type': 'ObjectKey',
+            'IsEnum': false,
+            'Description': 'The name of the primary controller associated with this cluster.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'Protected',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Whether this is protected from deletion in the database.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'SecondaryCommID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 1.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The secondary comm method\'s object ID.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'SecondaryCommunicationStatus',
+            'LocalizedName': 'Secondary Communication Status',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'SoftwareHouse.NextGen.Common.SecurityObjectDefinitions.OnlineStatus',
+            'IsEnum': true,
+            'Description': 'Secondary communication status for this iSTAR cluster',
+            'IsUdf': false
+        },
+        {
+            'Name': 'SecondaryControllerID',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 1.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'The secondary controller\'s object ID.',
+            'IsUdf': false
+        },
+        {
+            'Name': 'Template',
+            'LocalizedName': 'Template',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Is this iSTAR cluster a template?',
+            'IsUdf': false
+        },
+        {
+            'Name': 'UnackedMessagesMax',
+            'IsUserSelectable': false,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Int32',
+            'IsEnum': false,
+            'MinValue': 0.0,
+            'MaxValue': 2147483647.0,
+            'Description': 'Maximum number of unacknowledged messages for each controller',
+            'IsUdf': false
+        },
+        {
+            'Name': 'UseFastDownload',
+            'LocalizedName': 'Use Fast Download',
+            'IsUserSelectable': true,
+            'IsReadOnly': true,
+            'IsSearchable': true,
+            'IsPersistent': true,
+            'Type': 'Boolean',
+            'IsEnum': false,
+            'Description': 'Whether to use Fast Personnel Download for this cluster or not.  This setting will override the System Variable setting for Using Fast Personnel Download.',
+            'IsUdf': false
+        }
+    ]
+};
+
+export { typeName, schema };

@@ -22,9 +22,23 @@ export class AuthController {
     //
     // Logs into the system using the data passed in the Login object. 
     public Login(login: Login): HttpResponse {
+        
         console.log(`Login:${login}`);
 
-        const session = SessionManager.instance.getSession(login);
+        if (!login.username) {
+            return new HttpResponse(StatusCodes.BAD_REQUEST, { 'Message':'Invalid Username'});
+        }
+        if (!login.password) {
+            return new HttpResponse(StatusCodes.BAD_REQUEST, { 'Message':'Invalid Password'});
+        }
+        if (!login.clientName) {
+            return new HttpResponse(StatusCodes.BAD_REQUEST, { 'Message':'The name of the client for the connection is invalid'});
+        }
+        if (!login.clientId) {
+            return new HttpResponse(StatusCodes.BAD_REQUEST, { 'Message':'The clientID for the client is invalid'});
+        }
+
+        const session = SessionManager.instance.getSessionFromLogin(login);
         if (session) {
             return new HttpResponse(StatusCodes.OK, session.sessionId);
         } 
@@ -41,9 +55,16 @@ export class AuthController {
 
     //
     // Logs into the system using the data passed in the Login object. 
-    public Logout(): HttpResponse {
+    public Logout(sessionId: string | undefined): HttpResponse {
         console.log('Logout');
-        return new HttpResponse(StatusCodes.NOT_IMPLEMENTED);
+
+        const session = SessionManager.instance.getSessionFromId(sessionId);
+        if (session) {
+            SessionManager.instance.removeSession(session);
+            return new HttpResponse(StatusCodes.OK, {'Error':'','Response':'Success'});
+        }
+
+        return new HttpResponse(StatusCodes.INTERNAL_SERVER_ERROR, 'Error logging out');
     }
 
 }
