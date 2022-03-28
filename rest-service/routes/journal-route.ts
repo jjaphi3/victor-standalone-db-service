@@ -1,6 +1,4 @@
-import { ObjectsController } from '../controllers/objects-controller';
-import { Criteria } from '../models/criteria';
-import { Utils } from '../utils';
+import { JournalController } from '../controllers/journal-controller';
 import { BaseRoute } from './base-route';
 
 export class JournalRoute extends BaseRoute {
@@ -13,11 +11,10 @@ export class JournalRoute extends BaseRoute {
 
     protected initRoutes() {
 
-        this.router.get('/getReport', (req, res, next) => {
+        this.router.get('/getReports', (req, res, next) => {
             console.log(`url:${req?.url}`);
 
-            const criteria = Utils.setObjectFromRequestBody(req, new Criteria()) as Criteria;
-            const response = ObjectsController.instance.findObjsWithCriteriaFilter(criteria);
+            const response = JournalController.instance.getReports();
             this.sendResponse(req, res, response);
         });
 

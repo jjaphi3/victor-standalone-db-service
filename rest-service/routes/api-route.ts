@@ -1,8 +1,7 @@
-import bodyParser from 'body-parser';
-
 import { AuthRoute } from './auth-route';
 import { BaseRoute } from './base-route';
 import { GenericRoute } from './generic-route';
+import { JournalRoute } from './journal-route';
 import { ObjectsRoute } from './objects-route';
 import { SchemaRoute } from './schema-route';
 import { V2Route } from './v2-route';
@@ -51,5 +50,6 @@ export class ApiRoute extends BaseRoute {
         router.AddRoute(ObjectsRoute.instance);
         router.AddRoute(GenericRoute.instance);
         router.AddRoute(SchemaRoute.instance);
+        router.AddRoute(JournalRoute.instance);
     }
 }

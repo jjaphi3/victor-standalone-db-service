@@ -1,4 +1,4 @@
-const typeName = 'SoftwareHouse.CrossFire.Common.Objects.WebLayout';
+const typeName = 'SoftwareHouse.CrossFire.Common.Objects.TimeSpec';
 const table = [
     {
         'January': false,
@@ -67,7 +67,8 @@ const table = [
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': []
     },
     {
         'January': false,
@@ -136,7 +137,64 @@ const table = [
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': [
+            {
+                'StartTimeAsDateTime': null,
+                'EndTimeAsDateTime': null,
+                'DurationAsString': null,
+                'ProcessingOrder': null,
+                'NumberOfChangesThisTransaction': null,
+                'ObjectID': 1,
+                'DurationTime': 864000000000,
+                'Enabled': false,
+                'Friday': true,
+                'GUID': 'ada84ee0-aaf4-45fd-9796-8e614cc7311e',
+                'HolidayGroupId': null,
+                'LastModifiedByID': 1,
+                'LastModifiedTime': '2021-07-26T13:53:48.11Z',
+                'Monday': true,
+                'Protected': true,
+                'Saturday': true,
+                'ScheduleID': 2,
+                'StartTime': 0,
+                'Sunday': true,
+                'Thursday': true,
+                'Tuesday': true,
+                'Wednesday': true,
+                'DefaultRecord': false,
+                'Template': false,
+                'ParentClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeSpec',
+                'Variance': false,
+                'VarianceStartDateTime': '1970-01-01T00:00:00Z',
+                'VarianceEndDateTime': '1970-01-01T00:00:00Z',
+                'OccurenceDeleted': false,
+                'OriginalOccurenceStartDateTime': '1970-01-01T00:00:00Z',
+                'OriginalOccurenceEndDateTime': '1970-01-01T00:00:00Z',
+                'Description': null,
+                'ClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                '*routing': null,
+                '*ObjectSize': 348,
+                '*id': {
+                    '_values': [
+                        1
+                    ],
+                    '_objectTypeName': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                    '_appServer': 'VM-INGRTN-16-15',
+                    'Guid': 'ada84ee0-aaf4-45fd-9796-8e614cc7311e',
+                    'RoutingInfo': null,
+                    'ContextId': '00000000-0000-0000-0000-000000000000',
+                    'TransactionID': null
+                },
+                '*PK': [
+                    'ObjectID'
+                ],
+                '*state': 1,
+                '*appServer': 'VM-INGRTN-16-15',
+                '*context': '00000000-0000-0000-0000-000000000000',
+                '*container': []
+            }
+        ]
     },
     {
         'January': false,
@@ -205,7 +263,64 @@ const table = [
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': [
+            {
+                'StartTimeAsDateTime': null,
+                'EndTimeAsDateTime': null,
+                'DurationAsString': null,
+                'ProcessingOrder': null,
+                'NumberOfChangesThisTransaction': null,
+                'ObjectID': 3,
+                'DurationTime': 14400000000,
+                'Enabled': false,
+                'Friday': true,
+                'GUID': 'd2d68b64-2f67-4c93-a65b-68c18eb23190',
+                'HolidayGroupId': null,
+                'LastModifiedByID': 1,
+                'LastModifiedTime': '2021-07-26T13:53:48.11Z',
+                'Monday': true,
+                'Protected': true,
+                'Saturday': true,
+                'ScheduleID': 3,
+                'StartTime': 82200000000,
+                'Sunday': true,
+                'Thursday': true,
+                'Tuesday': true,
+                'Wednesday': true,
+                'DefaultRecord': false,
+                'Template': false,
+                'ParentClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeSpec',
+                'Variance': false,
+                'VarianceStartDateTime': '1970-01-01T00:00:00Z',
+                'VarianceEndDateTime': '1970-01-01T00:00:00Z',
+                'OccurenceDeleted': false,
+                'OriginalOccurenceStartDateTime': '1970-01-01T00:00:00Z',
+                'OriginalOccurenceEndDateTime': '1970-01-01T00:00:00Z',
+                'Description': null,
+                'ClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                '*routing': null,
+                '*ObjectSize': 348,
+                '*id': {
+                    '_values': [
+                        3
+                    ],
+                    '_objectTypeName': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                    '_appServer': 'VM-INGRTN-16-15',
+                    'Guid': 'd2d68b64-2f67-4c93-a65b-68c18eb23190',
+                    'RoutingInfo': null,
+                    'ContextId': '00000000-0000-0000-0000-000000000000',
+                    'TransactionID': null
+                },
+                '*PK': [
+                    'ObjectID'
+                ],
+                '*state': 1,
+                '*appServer': 'VM-INGRTN-16-15',
+                '*context': '00000000-0000-0000-0000-000000000000',
+                '*container': []
+            }
+        ]
     },
     {
         'January': false,
@@ -274,7 +389,64 @@ const table = [
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': [
+            {
+                'StartTimeAsDateTime': null,
+                'EndTimeAsDateTime': null,
+                'DurationAsString': null,
+                'ProcessingOrder': null,
+                'NumberOfChangesThisTransaction': null,
+                'ObjectID': 10,
+                'DurationTime': 600000000,
+                'Enabled': false,
+                'Friday': false,
+                'GUID': '40095640-ac6d-4fb2-8ac3-274d11434307',
+                'HolidayGroupId': null,
+                'LastModifiedByID': 1,
+                'LastModifiedTime': '2021-07-26T13:53:48.11Z',
+                'Monday': false,
+                'Protected': false,
+                'Saturday': false,
+                'ScheduleID': 10,
+                'StartTime': 36000000000,
+                'Sunday': true,
+                'Thursday': false,
+                'Tuesday': false,
+                'Wednesday': false,
+                'DefaultRecord': false,
+                'Template': false,
+                'ParentClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeSpec',
+                'Variance': false,
+                'VarianceStartDateTime': '1970-01-01T00:00:00Z',
+                'VarianceEndDateTime': '1970-01-01T00:00:00Z',
+                'OccurenceDeleted': false,
+                'OriginalOccurenceStartDateTime': '1970-01-01T00:00:00Z',
+                'OriginalOccurenceEndDateTime': '1970-01-01T00:00:00Z',
+                'Description': null,
+                'ClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                '*routing': null,
+                '*ObjectSize': 348,
+                '*id': {
+                    '_values': [
+                        10
+                    ],
+                    '_objectTypeName': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                    '_appServer': 'VM-INGRTN-16-15',
+                    'Guid': '40095640-ac6d-4fb2-8ac3-274d11434307',
+                    'RoutingInfo': null,
+                    'ContextId': '00000000-0000-0000-0000-000000000000',
+                    'TransactionID': null
+                },
+                '*PK': [
+                    'ObjectID'
+                ],
+                '*state': 1,
+                '*appServer': 'VM-INGRTN-16-15',
+                '*context': '00000000-0000-0000-0000-000000000000',
+                '*container': []
+            }
+        ]
     },
     {
         'January': false,
@@ -343,7 +515,64 @@ const table = [
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': [
+            {
+                'StartTimeAsDateTime': null,
+                'EndTimeAsDateTime': null,
+                'DurationAsString': null,
+                'ProcessingOrder': null,
+                'NumberOfChangesThisTransaction': null,
+                'ObjectID': 11,
+                'DurationTime': 600000000,
+                'Enabled': false,
+                'Friday': false,
+                'GUID': 'cc20bf4f-69d2-435b-b08d-ba0691a457fe',
+                'HolidayGroupId': null,
+                'LastModifiedByID': 1,
+                'LastModifiedTime': '2021-07-26T13:53:48.11Z',
+                'Monday': false,
+                'Protected': false,
+                'Saturday': false,
+                'ScheduleID': 11,
+                'StartTime': 48000000000,
+                'Sunday': true,
+                'Thursday': false,
+                'Tuesday': false,
+                'Wednesday': false,
+                'DefaultRecord': false,
+                'Template': false,
+                'ParentClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeSpec',
+                'Variance': false,
+                'VarianceStartDateTime': '1970-01-01T00:00:00Z',
+                'VarianceEndDateTime': '1970-01-01T00:00:00Z',
+                'OccurenceDeleted': false,
+                'OriginalOccurenceStartDateTime': '1970-01-01T00:00:00Z',
+                'OriginalOccurenceEndDateTime': '1970-01-01T00:00:00Z',
+                'Description': null,
+                'ClassType': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                '*routing': null,
+                '*ObjectSize': 348,
+                '*id': {
+                    '_values': [
+                        11
+                    ],
+                    '_objectTypeName': 'SoftwareHouse.CrossFire.Common.Objects.TimeInterval',
+                    '_appServer': 'VM-INGRTN-16-15',
+                    'Guid': 'cc20bf4f-69d2-435b-b08d-ba0691a457fe',
+                    'RoutingInfo': null,
+                    'ContextId': '00000000-0000-0000-0000-000000000000',
+                    'TransactionID': null
+                },
+                '*PK': [
+                    'ObjectID'
+                ],
+                '*state': 1,
+                '*appServer': 'VM-INGRTN-16-15',
+                '*context': '00000000-0000-0000-0000-000000000000',
+                '*container': []
+            }
+        ]
     }
 ];
 

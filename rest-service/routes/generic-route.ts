@@ -4,6 +4,7 @@ import { AuthController } from '../controllers/auth-controller';
 import { GenericController } from '../controllers/generic-controller';
 import { Login } from '../models/login';
 import { SessionManager } from '../session-manager';
+import { Utils } from '../utils';
 import { BaseRoute } from './base-route';
 
 export class GenericRoute extends BaseRoute {
@@ -37,8 +38,16 @@ export class GenericRoute extends BaseRoute {
 
             const requestParams: XfireMethodQueryParams = req.query as XfireMethodQueryParams;
             const methodArgsParams = new URLSearchParams(req.body);
-            const methodArgsValues = Object.fromEntries(methodArgsParams) as ArgumentValuesParams;
-            const args = JSON.parse(methodArgsValues.ArgumentValues);
+            const methodArgsValues = Utils.fromParams(methodArgsParams) as ArgumentValuesParams;
+
+            // methodArgsValues.ArgumentValues = methodArgsValues.ArgumentValues?.replaceAll('\\r\\n', '');
+            let args = {};
+            try {
+                args = JSON.parse(methodArgsValues.ArgumentValues);
+            }
+            catch (e) {
+                console.log(`JSON.parse(methodArgsValues.ArgumentValues) Exception:${e}`);
+            }
 
             const response = GenericController.instance.executeCrossfireMethod(requestParams.requestService, requestParams.methodName, args);
             this.sendResponse(req, res, response);

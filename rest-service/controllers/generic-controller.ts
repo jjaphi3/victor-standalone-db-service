@@ -2,6 +2,8 @@ import { StatusCodes } from 'http-status-codes';
 import { HttpResponse } from '../models/http-response';
 import { version } from '../../package.json';
 import { Session } from '../models/login';
+import { Criteria } from '../models/criteria';
+import { DbController } from '../../database/db-controller';
 
 export class GenericController {
 
@@ -44,6 +46,36 @@ export class GenericController {
         else if(serviceName == 'SoftwareHouse.NextGen.Common.SecurityObjects.SystemVariable') {
             if (methodName == 'GetSystemMaxClearPerGlobalPerson') {
                 return new HttpResponse(StatusCodes.OK, 0);
+            }
+        }
+        else if (serviceName == 'SoftwareHouse.CrossFire.Common.Shared.IEnhancedDataAccessService') {
+            if (methodName == 'FindCollection') {
+
+                type FindCollectionCriteria = {
+                    args: object[];
+                    className: string;
+                    explicitPropertyList: unknown;
+                    pageNumber: number;
+                    pageSize: number;
+                    propertyList: string[];
+                    sortColumnName: string;
+                    whereClause: string;
+                };
+                const findCollectionCriteria = args as FindCollectionCriteria;
+                const criteria = new Criteria(findCollectionCriteria.className, findCollectionCriteria.whereClause, undefined, findCollectionCriteria.args);
+                const objects = DbController.instance.getSortedObjects(criteria, findCollectionCriteria.propertyList, findCollectionCriteria.sortColumnName);
+                return new HttpResponse(StatusCodes.OK, objects);
+
+            }
+            else if (methodName == 'GetLookupIdValues') {
+                return new HttpResponse(StatusCodes.OK, [
+                    {
+                        'TypeName': 'SoftwareHouse.CrossFire.Common.Objects.Partition',
+                        'Value': 1,
+                        'DisplayName': 'Default',
+                        '__propertyType': 'lookup'
+                    }
+                ]);
             }
         }
 

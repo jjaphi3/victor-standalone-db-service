@@ -1,6 +1,4 @@
-import { ObjectsController } from '../controllers/objects-controller';
 import { SchemaController } from '../controllers/schema-controller';
-import { Criteria } from '../models/criteria';
 import { Utils } from '../utils';
 import { BaseRoute } from './base-route';
 
