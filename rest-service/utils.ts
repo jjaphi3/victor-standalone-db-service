@@ -20,9 +20,12 @@ export class Utils {
     //
     // set object ingnoring the case of the parameters
     public static setObjectFromRequestBody(req: express.Request, to: object): object {
-        const params = new URLSearchParams(req.body);
-        const loginObject = Object.fromEntries(params);
-        return Utils.setObjectIgnoreCase(loginObject, to);
+        let obj = req.body;
+        if (obj instanceof String) {
+            const params = new URLSearchParams(req.body);
+            obj = Utils.fromParams(params);
+        }
+        return Utils.setObjectIgnoreCase(obj, to);
     }
 
     //
@@ -35,5 +38,30 @@ export class Utils {
             return JSON.parse(keys[0]);
         }
         return undefined;
+    }
+
+    //
+    // object from url params
+    public static fromParams(from: URLSearchParams): object { 
+        const entries = [...from.entries()];
+        return entries.reduce((previous, current) => {
+            console.log(previous);
+            console.log(current);
+            const previousRecord = previous as Record<string, unknown>;
+            const [key, value] = current;
+            if (Object.keys(previous).find(k => k == key)) {
+                if(Array.isArray(previousRecord[key])) {
+                    const previousRecordArray = previous as Record<string, string[]>;
+                    previousRecordArray[key] = [...previousRecordArray[key], value];
+                  } 
+                  else {
+                    previousRecord[key] = [previousRecord[key], value];
+                  }
+            }
+            else {
+                previousRecord[key] = value;
+            }
+            return previous;
+        }, {});
     }
 }

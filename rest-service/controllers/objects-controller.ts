@@ -1,4 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
+import { DbController } from '../../database/db-controller';
 import { Criteria } from '../models/criteria';
 import { CrossFireObject } from '../models/crossFireObject';
 import { HttpResponse } from '../models/http-response';
@@ -58,7 +59,12 @@ export class ObjectsController {
     // Finds and returns all the objects defined in the Criteria
     public findObjsWithCriteriaFilter(criteria: Criteria): HttpResponse {
         console.log(`FindObjsWithCriteriaFilter:${criteria}`);
-        return new HttpResponse(StatusCodes.NOT_IMPLEMENTED);
+
+        const objects = DbController.instance.getObjects(criteria);
+        if (objects) {
+            return new HttpResponse(StatusCodes.OK, objects);
+        }
+        return new HttpResponse(StatusCodes.BAD_REQUEST);
     }
 
     //

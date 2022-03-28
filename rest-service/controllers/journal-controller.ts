@@ -12,7 +12,7 @@ export class JournalController {
     }
 
     //
-    // GenericController instance
+    // JournalController instance
     public static get instance(): JournalController {
         return JournalController.journalController 
             ? JournalController.journalController

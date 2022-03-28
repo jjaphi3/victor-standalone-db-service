@@ -1,49 +1,29 @@
 const typeName = 'SoftwareHouse.CrossFire.Common.Objects.Partition';
 const table = [
     {
-        'OperatorState': 1,
-        'AuthenticationTypeEnum': 2,
-        'AuthenticationType': 'Windows',
-        'ObjectID': 5000,
-        'Description': 'VM-INGRTN-16-15_test',
-        'LockedOut': false,
-        'Enabled': true,
-        'GUID': '4ea4f53e-2aae-4bee-b12f-9fda7921e13b',
-        'LastModifiedByID': 5000,
-        'LastModifiedTime': '2022-02-24T13:57:39.983Z',
-        'Name': 'test',
-        'Protected': false,
-        'WindowsPrincipal': 'VM-INGRTN-16-15\\TEST',
-        'OauthID': null,
-        'DefaultRecord': false,
+        'AppServerName': 'VM-INGRTN-16-15',
+        'ObjectID': 1,
+        'Description': 'Default System Partition',
+        'GUID': '0cabdff8-2b1f-40e0-91f4-8c1a443c7422',
+        'LastModifiedByID': 1,
+        'LastModifiedTime': '2021-07-26T13:55:21.697Z',
+        'Name': 'Default',
+        'Protected': true,
+        'Shared': false,
+        'DefaultRecord': true,
+        'IsGlobalPartition': false,
         'Template': false,
-        'Signature': 'f5W63O8TZxI2VWSeyHD7iAM/m88=',
-        'LoggedState': 1,
-        'TemplateID': 0,
-        'PartitionID': 1,
-        'Salt': null,
-        'BasicUsername': null,
-        'EncodedPassword': null,
-        'EmailAddress': null,
-        'ActiveTemplateID': null,
-        'ActiveTemplate': false,
-        'WebRoleViewID': null,
-        'PasswordChanged': false,
-        'BasicAuthenticationAuthorized': false,
-        'LayoutName': '',
-        'LayoutGuid': '00000000-0000-0000-0000-000000000000',
-        'ClassType': 'SoftwareHouse.CrossFire.Common.Objects.Operator',
-        'Domain': 'VM-INGRTN-16-15',
-        'Username': 'TEST',
+        'IsDefaultPartition': true,
+        'ClassType': 'SoftwareHouse.CrossFire.Common.Objects.Partition',
         '*routing': null,
-        '*ObjectSize': 380,
+        '*ObjectSize': 329,
         '*id': {
             '_values': [
-                5000
+                1
             ],
-            '_objectTypeName': 'SoftwareHouse.CrossFire.Common.Objects.Operator',
+            '_objectTypeName': 'SoftwareHouse.CrossFire.Common.Objects.Partition',
             '_appServer': 'VM-INGRTN-16-15',
-            'Guid': '4ea4f53e-2aae-4bee-b12f-9fda7921e13b',
+            'Guid': '0cabdff8-2b1f-40e0-91f4-8c1a443c7422',
             'RoutingInfo': null,
             'ContextId': '00000000-0000-0000-0000-000000000000',
             'TransactionID': null
@@ -53,7 +33,8 @@ const table = [
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': []
     }
 ];
 

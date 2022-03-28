@@ -1,5 +1,5 @@
 const typeName = 'ACVS.Enterprise.Common.Services.CoreOperatorRolePair';
-const table =[
+const table = [
     {
         'ObjectID': 1,
         'OperatorGuid': '402b698b-4ab4-4c4a-b207-e7c029cbb57d',
@@ -23,7 +23,8 @@ const table =[
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': []
     },
     {
         'ObjectID': 5000,
@@ -48,7 +49,8 @@ const table =[
         ],
         '*state': 1,
         '*appServer': 'VM-INGRTN-16-15',
-        '*context': '00000000-0000-0000-0000-000000000000'
+        '*context': '00000000-0000-0000-0000-000000000000',
+        '*container': []
     }
 ];
 

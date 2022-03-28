@@ -1,5 +1,4 @@
 import { SystemVariablesController } from '../controllers/system-variable-controller';
-import { Utils } from '../utils';
 import { BaseRoute } from './base-route';
 
 export class SystemVariableRoute extends BaseRoute {

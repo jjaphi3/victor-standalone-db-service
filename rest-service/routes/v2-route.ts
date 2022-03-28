@@ -1,5 +1,7 @@
 import { ApiRoute } from './api-route';
 import { BaseRoute } from './base-route';
+import { GlobalSearchRoute } from './global-search';
+import { SystemVariableRoute } from './system-variable-route';
 
 export class V2Route extends BaseRoute {
 
@@ -11,6 +13,8 @@ export class V2Route extends BaseRoute {
 
     protected initRoutes() {
         ApiRoute.setApiRoutes(this);
+        this.AddRoute(SystemVariableRoute.instance);
+        this.AddRoute(GlobalSearchRoute.instance);
 
         this.router.all('/*', (req, res, next) => {
             console.log(`${this.path} - unknown endpoint: ${req.method} - ${req.originalUrl}`);
