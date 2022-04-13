@@ -1,6 +1,4 @@
 import { GlobalSearchController } from '../controllers/global-search-controller';
-import { ObjectsController } from '../controllers/objects-controller';
-import { Criteria } from '../models/criteria';
 import { GlobalSearchCriteria } from '../models/global-search-criteria';
 import { Utils } from '../utils';
 import { BaseRoute } from './base-route';

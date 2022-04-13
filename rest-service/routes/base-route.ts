@@ -1,7 +1,6 @@
 import express from 'express';
 
 import { HttpResponse } from '../models/http-response';
-import { Session } from '../models/login';
 import { SessionManager } from '../session-manager';
 
 export abstract class BaseRoute {

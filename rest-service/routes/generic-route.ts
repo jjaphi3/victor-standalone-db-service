@@ -1,8 +1,4 @@
-import bodyParser from 'body-parser';
-
-import { AuthController } from '../controllers/auth-controller';
 import { GenericController } from '../controllers/generic-controller';
-import { Login } from '../models/login';
 import { SessionManager } from '../session-manager';
 import { Utils } from '../utils';
 import { BaseRoute } from './base-route';

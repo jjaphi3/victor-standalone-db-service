@@ -10,6 +10,8 @@ import { stringify } from 'uuid';
 import * as NodeSqlParser from 'node-sql-parser';
 import { ObjectsController } from './rest-service/controllers/objects-controller';
 import { GenericController } from './rest-service/controllers/generic-controller';
+import { ServiceManager } from './service-manager';
+import axios, { AxiosRequestConfig } from 'axios';
 
 
 
@@ -19,6 +21,18 @@ export class VictorStandaloneDbService {
     public static test() {
 
         console.log(version);
+        console.log(process.pid);
+
+        // const config: AxiosRequestConfig = { };
+        // config.
+        // const client = axios.create({ baseURL: 'http://localhost:4000'});
+        // client.get('/appMode')
+        //     .then(response => {
+        //         console.log(response);
+        //     })
+        //     .catch(e => {
+        //         console.log(e);
+        //     });
 
         const login = { 
             username: 'user',
@@ -108,6 +122,8 @@ export class VictorStandaloneDbService {
         if (apiService != null) {
             console.log(apiService);
         }
+        const serverManager = ServiceManager.instance;
+        serverManager.start();
 
     }
 }

@@ -32,7 +32,7 @@ export class SessionManager {
             : SessionManager.sessionManager = new SessionManager();
     }
 
-//
+    //
     // get from request
     public getSessionFromRequest(req: express.Request): Session | undefined {
         const sessionId = req?.get('session-id');

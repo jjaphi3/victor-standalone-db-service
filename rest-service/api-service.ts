@@ -1,6 +1,7 @@
 import express from 'express';
+import { VictorStandaloneServiceRoute } from './routes/victor-standalone-service-route';
 
-import { VictorWebServiceRoute } from './routes/victorWebService-route';
+import { VictorWebServiceRoute } from './routes/victor-web-service-route';
 
 export class ApiService {
 
@@ -19,6 +20,9 @@ export class ApiService {
     //
     // start the api service 
     public startServer(): void {
+
+        const victorStandaloneService = VictorStandaloneServiceRoute.instance;
+        this.app.use(victorStandaloneService.path, victorStandaloneService.router);
 
         const victorWebService = VictorWebServiceRoute.instance;
         this.app.use(victorWebService.path, victorWebService.router);

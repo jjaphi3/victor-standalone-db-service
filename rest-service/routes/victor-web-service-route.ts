@@ -1,11 +1,7 @@
 import bodyParser from 'body-parser';
-import { ApiRoute } from './api-route';
 
-import { AuthRoute } from './auth-route';
+import { ApiRoute } from './api-route';
 import { BaseRoute } from './base-route';
-import { GenericRoute } from './generic-route';
-import { ObjectsRoute } from './objects-route';
-import { V2Route } from './v2-route';
 
 export class VictorWebServiceRoute extends BaseRoute {
 
@@ -37,7 +33,7 @@ export class VictorWebServiceRoute extends BaseRoute {
     }
 
     //
-    // ApiRoute instance
+    // VictorWebServiceRoute instance
     public static get instance(): VictorWebServiceRoute {
         return VictorWebServiceRoute.victorWebServiceRoute 
             ? VictorWebServiceRoute.victorWebServiceRoute
