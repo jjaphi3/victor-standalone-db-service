@@ -1,4 +1,3 @@
-import bodyParser from 'body-parser';
 import { StatusCodes } from 'http-status-codes';
 
 import { AuthController } from '../controllers/auth-controller';
